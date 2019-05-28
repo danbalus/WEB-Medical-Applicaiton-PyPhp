@@ -1,0 +1,20 @@
+php artisan clear-compiled
+
+php artisan migrate
+php artisan migrate:refresh --seed
+php artisan serve
+php artisan make:migration Comment2
+
+
+php artisan db:seed --class=ArticlesTableSeeder
+
+php artisan make:seeder ArticlesTableSeeder
+
+php artisan db:seed
+
+
+php artisan make:model Article
+
+php artisan make:factory PostFactory
+
+php artisan make:controller ArticleController

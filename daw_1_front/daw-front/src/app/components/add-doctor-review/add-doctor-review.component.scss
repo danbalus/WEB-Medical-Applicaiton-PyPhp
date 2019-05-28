@@ -1,0 +1,111 @@
+.body{
+    //padding: 150px 0px;
+    background: url("../../../assets/backgr2.png") ;
+     height: 100%;
+//     position: relative;
+//    // opacity: 0.65;
+//     background-position: center;
+     background-repeat: repeat-x;
+    // background-size: cover;
+
+}
+#btn-remove{
+    // margin-left: 10%;
+     color:red;
+     cursor: pointer;
+ }
+ .card{
+     width: 300px;
+     margin-top: 10px;
+     //margin-bottom: 10px;
+     //height: 250px;
+     margin-left: 10px;
+     float:left;
+     //margin-right: 70%;
+     flex-direction:row;
+     border: 1px solid black;
+     //padding: 10px;
+     border-radius: 25px;
+     
+ }
+ .photoDoc{
+    display:flex;
+    align-items: center;
+    
+
+ }
+//  .all-doctors{
+//   align-items: center;
+ 
+//  }
+//  .card-group{
+//      display: flex;
+//      //width: 30%;
+//      align-items: center;
+    
+
+//      //flex-direction: column;
+//      //align-items: center;
+//  }
+ #c1{
+    margin: 12px;
+ }
+ #ngc1{
+    display: flex;
+    flex-wrap: wrap;
+    //flex-grow: 10000000;/*Or any number big enough*/
+ }
+ .rating {
+    float:left;
+  }
+
+  /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+    follow these rules. Every browser that supports :checked also supports :not(), so
+    it doesn’t make the test unnecessarily selective */
+  .rating:not(:checked) > input {
+      position:absolute;
+      top:-9999px;
+      clip:rect(0,0,0,0);
+  }
+
+  .rating:not(:checked) > label {
+      float:right;
+      width:1em;
+      /* padding:0 .1em; */
+      overflow:hidden;
+      white-space:nowrap;
+      cursor:pointer;
+      font-size:300%;
+      /* line-height:1.2; */
+      color:#ddd;
+  }
+
+  .rating:not(:checked) > label:before {
+      content: '★ ';
+  }
+
+  .rating > input:checked ~ label {
+      color: dodgerblue;
+      
+  }
+
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+      color: dodgerblue;
+      
+  }
+
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+      color: dodgerblue;
+      
+  }
+
+  .rating > label:active {
+      position:relative;
+      top:2px;
+      left:2px;
+  }

@@ -1,0 +1,336 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  
+  <body class="body">
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">
+        <img src="../../../assets/nav_logo.png" width="45" height="45" class="d-inline-block align-top" alt="">
+        CleanMed
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a translate class="nav-link" href="user-profile">MyProfile<span class="sr-only">(current)</span></a>
+              </li>
+          <li class="nav-item active">
+            <a translate class="nav-link" href="medical-unit">MedicalUnits<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a translate class="nav-link" href="doctor">Doctors<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+              <a translate class="nav-link" href="all-comments">Reviews<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="#" (click)="logout()">Log Out</a>
+            </li>
+        </ul>
+      </div>
+      <div class="btn-group-sm" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" (click)="switchLanguage('ro')">RO</button>
+        <button type="button" class="btn btn-secondary" (click)="switchLanguage('en')">EN</button>
+      </div>
+    </nav>
+  <!-- <p>--------------------------</p>
+  <p>--------------------------</p>
+  <p>--------------------------</p> -->
+  <div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img  id="#imageInput"  src='../../../assets/{{sub.profilePicture}}' alt=""/>
+                    <div class="file btn btn-lg btn-primary" (change)="onFileChanged($event)" >
+                        Change Photo 
+                        <input type="file" name="file"/>
+                        
+                    </div>
+                    <button type="button" (click)="processFile(imageInput)">Upload photo</button>
+                   
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                            <h5>
+                                 {{sub.user_details.name}}
+                            </h5>
+                            <h6>
+                                Pacient
+                            </h6>
+                            <!-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="user-profile" role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">                
+                  <!-- (click)="setUnitName([element.name])"> -->
+                  <!-- <a href="edit-user-profile"> -->
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" onclick="document.location.href='edit-user-profile';" value="Edit Profile"/>  
+                  <!-- </a>       -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>USEFUL LINK</p>
+                    <a href="doctor">Doctors Evaluation</a><br/>
+                    <a href="main-page">Main Page</a><br/>
+                    
+                    <p>LINKS</p>
+                    <a href="">Logout</a><br/>
+                    <a href="register">Register</a><br/>
+                    <!-- <a href="">WordPress</a><br/>
+                    <a href="">WooCommerce</a><br/>
+                    <a href="">PHP, .Net</a><br/> -->
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>User Id</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Kshiti123</p>
+                                    </div>
+                                </div> -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{sub.user_details.name}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{sub.email}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Affection</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{sub.user_details.affection}}</p>
+                                    </div>
+                                </div>
+                                <!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Profession</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Web Developer and Designer</p>
+                                    </div>
+                                </div> -->
+                    </div>
+                    <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Experience</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Expert</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Hourly Rate</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>10$/hr</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Total Projects</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>230</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>English Level</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Expert</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Availability</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>6 months</p>
+                                    </div>
+                                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Your Bio</label><br/>
+                                <p>Your detail description</p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </form>           
+  </div>
+<br/>
+<br/>
+<br/>
+<br/>
+    <footer class="page-footer font-small mdb-color pt-4 bg-dark">
+  
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left text-white">
+  
+        <!-- Footer links -->
+        <div class="row text-center text-md-left mt-3 pb-3">
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
+            <h6 class="text-uppercase mb-4 font-weight-bold">CleanMed</h6>
+            <p translate>CleanMedInfo</p>
+          </div>
+          <!-- Grid column -->
+  
+          <hr class="w-100 clearfix d-md-none">
+  
+          <!-- Grid column -->
+          <!-- <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a href="#!">MDBootstrap</a>
+            </p>
+            <p>
+              <a href="#!">MDWordPress</a>
+            </p>
+            <p>
+              <a href="#!">BrandFlow</a>
+            </p>
+            <p>
+              <a href="#!">Bootstrap Angular</a>
+            </p>
+          </div> -->
+          <!-- Grid column -->
+  
+          <hr class="w-100 clearfix d-md-none">
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 translate class="text-uppercase mb-4 font-weight-bold">UsefulLinks</h6>
+            <p>
+              <a translate href="/">MainPage</a>
+            </p>
+            <p>
+              <a translate href="medical-unit">MedicalUnits</a>
+            </p>
+            <p>
+              <a translate href="doctor">Doctors</a>
+            </p>
+            <p>
+              <a translate href="#!">Help</a>
+            </p>
+          </div>
+  
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none">
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p>
+              <i class="fas fa-home mr-3"></i> Cluj-Napoca, CJ 10012, RO</p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> CleanMed@gmail.com</p>
+            <p>
+              <i class="fas fa-phone mr-3"></i> + 40 733 224 432</p>
+            <p>
+              <i class="fas fa-print mr-3"></i> + 40 234 234 555</p>
+          </div>
+          <!-- Grid column -->
+  
+        </div>
+        <!-- Footer links -->
+  
+        <hr>
+  
+        <!-- Grid row -->
+        <div class="row d-flex align-items-center">
+  
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8">
+  
+            <!--Copyright-->
+            <p class="text-center text-md-left">© 2019 Copyright:
+              <a href="https://google.com">
+                <strong> CleanMed.com</strong>
+              </a>
+            </p>
+  
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0">
+  
+            <!-- Social buttons -->
+            <div class="text-center text-md-right">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-google-plus-g"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+  
+          </div>
+          <!-- Grid column -->
+  
+        </div>
+        <!-- Grid row -->
+  
+      </div>
+      <!-- Footer Links -->
+    </footer>
+  </body>

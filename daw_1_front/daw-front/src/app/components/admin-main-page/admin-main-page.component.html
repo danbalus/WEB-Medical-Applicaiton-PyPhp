@@ -1,0 +1,328 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 	 
+  <title>admin-template</title> 
+ 
+
+	<!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css"> -->
+	<!-- <link href="css/font-awesome.css" rel="stylesheet" type="text/css">	 -->
+	<!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
+	<script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
+    </head>
+
+
+<body>
+                                  <!--=============================
+                                             NAVIGATION
+                                   =============================-->
+    
+<!--top nav start=======-->
+<!-- <nav class="navbar navbar-inverse top-navbar" id="top-nav">
+  <div class="container-fluid">
+    <div class="navbar-header">      
+      <a class="navbar-brand" href="#"><img class="img-responsive" src="https://lh3.googleusercontent.com/-N4NB2F966TU/WM7V1KYusRI/AAAAAAAADtA/fPvGVNzOkCo7ZMqLI6pPITE9ZF7NONmawCJoC/w185-h40-p-rw/logo.png" width="150" height="20"></a>
+        <a href="javascript:;" class="sidebar-toggle">
+        <i class="fa fa-bars"></i></a>
+        <span class="close-btn" id="hide-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
+    </div>
+      
+    <ul class="social-icon pull-right list-inline">
+          
+          <li class="dropdown">
+          <a class="messages-link dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-envelope"></span>
+              <span class="number">4</span>
+              <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+          
+          <li class="dropdown">
+          <a class="alerts-link dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"></span>
+              <span class="number">6</span>
+              <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+          
+           <li class="dropdown">
+          <a class="tasks-link dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th-list"></span> 
+              <span class="number">11</span>
+              <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+          
+          <li class="dropdown">
+          <a class="user-link dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>             
+              <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+      </ul>       
+    </div>  
+</nav>     -->
+<!--    top nav end===========-->
+    
+    <!-- begin SIDE NAV USER PANEL -->     
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="admin">
+          <img src="../../../assets/nav_logo.png" width="45" height="45" class="d-inline-block align-top" alt="">
+          CleanMed
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a translate class="nav-link " href="crud-users">CRUD Users<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a translate class="nav-link" href="crud-comments">CRUD Comments<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a translate class="nav-link" href="crud-dotors"> CRUD Doctors<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a translate class="nav-link" href="crud-medical-units">CRUD Medical Units<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="#" (click)="logout()">Log Out</a>
+              </li>
+          </ul>
+        </div>
+        <div class="btn-group-sm" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary" (click)="switchLanguage('ro')">RO</button>
+          <button type="button" class="btn btn-secondary" (click)="switchLanguage('en')">EN</button>
+        </div>
+      </nav>
+   <br/><br/>  
+    <div class="container-2">
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-title">
+              <h2>Dashboard<br/><small>Content Overview</small></h2>
+              <ol class="breadcrumb">
+                <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+                <li class="pull-right">
+                  <div id="reportrange" class="btn btn-green btn-square date-picker">
+                    <i class="fa fa-calendar"></i>
+                    <span class="date-range">{{currentDate | date:'yyyy-MM-dd'}}</span> <i class="fa fa-caret-down">
+                    </i>
+    
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+                                                 
+        <div class="row" >
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="crud-users">
+                                <div class="circle-tile-heading dark-blue">
+                                    <i class="fa fa-users fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content dark-blue">
+                                <div class="circle-tile-description text-faded">
+                                    Users
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                    <!-- 265 -->
+                                    CRUD USERS
+                                    <span id="sparklineA"></span>
+                                </div>
+                                <a href="crud-users" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                      <div class="circle-tile">
+                          <a href="crud-comments">
+                              <div class="circle-tile-heading blue">
+                                  <i class="fa fa-comments fa-fw fa-3x"></i>
+                                  
+                              </div>
+                          </a>
+                          <div class="circle-tile-content blue">
+                              <div class="circle-tile-description text-faded">
+                                  Comments
+                              </div>
+                              <div class="circle-tile-number text-faded">
+                                  <!-- 10 -->
+                                  CRUD COMMENTS
+                                  <span id="sparklineB"></span>
+                              </div>
+                              <a href="crud-comments" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="crud-medical-units">
+                                <div class="circle-tile-heading green">
+                                    <i class="fa fa-hospital-o fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content green">
+                                <div class="circle-tile-description text-faded">
+                                    Medical Units
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                    <!-- $32,384 -->
+                                    CRUD MEDICAL UNITS
+                                </div>
+                                <a href="crud-medical-units" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="crud-dotors">
+                                <div class="circle-tile-heading orange">
+                                    <i class="fa fa-stethoscope fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content orange">
+                                <div class="circle-tile-description text-faded">
+                                    Doctors
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                    <!-- 9 New -->
+                                    CRUD DOCTORS
+                                </div>
+                                <a href="crud-dotors" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-2 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="#">
+                                <div class="circle-tile-heading red">
+                                    <i class="fa fa-shopping-cart fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content red">
+                                <div class="circle-tile-description text-faded">
+                                    Orders
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                    24
+                                    <span id="sparklineC"></span>
+                                </div>
+                                <a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="#">
+                                <div class="circle-tile-heading purple">
+                                    <i class="fa fa-tasks fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content purple">
+                                <div class="circle-tile-description text-faded">
+                                    Mentions
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                    96
+                                    <span id="sparklineD"></span>
+                                </div>
+                                <a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+        <br/>     <br/>                                          
+        <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+         <div class="tile tile-img tile-time morning" style="height: 200px">
+           <p class="time-widget">
+            <span class="time-widget-heading">It Is Currently</span>
+             <br>
+              <strong><span id="datetime">{{currentDate | date:'EEEE'}}<br>{{currentDate | date}}<br>{{currentDate | date:'shortTime'}}</span></strong>
+              <!-- {{currentDate | date:'yyyy-MM-dd'}} -->
+           </p>
+         </div>
+        </div>
+         <div class="col-lg-9"></div>  
+            
+        </div>
+        
+    </div><!-- page-wrapper END-->
+   </div><!-- container-1 END-->
+ 
+    
+    
+
+
+ 
+
+    
+    
+    <script src="js/jquery-3.1.1.js"></script>    
+    <script src="js/bootstrap.js"></script>
+    
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".sidebar-toggle").click(function(){
+            $(this).hide();
+            
+           $("#user-profil").show();
+            
+           $("#hide-btn").show();
+            
+           $(".container-2").css("width", "85%");
+            
+             
+        });
+        
+        $("#hide-btn").click(function(){
+            $(this).hide();
+            
+           $("#user-profil").hide();
+            
+           $(".sidebar-toggle").show();
+            
+           $(".container-2").css("width", "100%");
+            
+             
+        });
+    });
+</script>
+</body>
+</html>

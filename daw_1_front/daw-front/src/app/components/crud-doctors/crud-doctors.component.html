@@ -1,0 +1,94 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  
+  <body class="body">
+  
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="admin">
+            <img src="../../../assets/nav_logo.png" width="45" height="45" class="d-inline-block align-top" alt="">
+            CleanMed
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a translate class="nav-link " href="crud-users">CRUD Users<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a translate class="nav-link" href="crud-comments">CRUD Comments<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a translate class="nav-link" href="crud-dotors"> CRUD Doctors<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                  <a translate class="nav-link" href="crud-medical-units">CRUD Medical Units<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"  href="#" (click)="logout()">Log Out</a>
+                </li>
+            </ul>
+          </div>
+          <div class="btn-group-sm" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" (click)="switchLanguage('ro')">RO</button>
+            <button type="button" class="btn btn-secondary" (click)="switchLanguage('en')">EN</button>
+          </div>
+        </nav>
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col">
+          1 of 3
+        </div>
+        <div class="col">
+          2 of 3
+        </div>
+        <div class="col">
+          3 of 3
+        </div>
+      </div>
+    </div> -->
+  
+    <br />
+    <div class="row">
+      <div class="container">
+          <button type="button" class="btn btn-primary btn-lg btn-block" (click)="add()">Add Doctor</button>
+      </div>
+    </div>
+    <br />
+    <!-- <div class="container"> -->
+        <div class="row" >
+            <div class="col-lg-4 col-sm-4 col-md-4"  *ngFor="let element of doctors">
+                    <div id="c1" class="card text-white bg-dark mb-3 rounded" >
+                      <div class="photoDoc" style="display: flex;align-items: center; padding: 4px">
+                        <img src='../../../assets/{{element.profilePicture}}' alt="..." class="rounded-circle">
+                      </div>
+                      <div class="card-body">
+                        <h3 class="card-title">{{element.name}}</h3>
+                        <h5 translate class="card-text">{{element.specialization}}</h5>
+                        <h5 class="card-text">{{element.graduationYear}}</h5>
+                         <!-- <h5 class="card-text">{{item.graduationYear}}</h5> -->
+                      <br/>
+                      
+                         
+                        <button type="button" class="btn btn-secondary btn-lg" (click)="update(element.id)">Update Info</button>  
+                     
+                        <button type="button" class="btn btn-secondary btn-lg" (click)="delete(element.id)">Delete Dr</button>
+                       
+                     
+            
+                      </div>
+                    </div>
+            </div>
+ 
+        </div>
+
+
+ 
+  </body>

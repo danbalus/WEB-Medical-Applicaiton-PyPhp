@@ -1,0 +1,116 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  </head>
+  
+  <body class="body">
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="admin">
+        <img src="../../../assets/nav_logo.png" width="45" height="45" class="d-inline-block align-top" alt="">
+        CleanMed
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a translate class="nav-link " href="crud-users">CRUD Users<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a translate class="nav-link" href="crud-comments">CRUD Comments<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a translate class="nav-link" href="crud-dotors"> CRUD Doctors<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a translate class="nav-link" href="crud-medical-units">CRUD Medical Units<span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="#" (click)="logout()">Log Out</a>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-group-sm" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" (click)="switchLanguage('ro')">RO</button>
+        <button type="button" class="btn btn-secondary" (click)="switchLanguage('en')">EN</button>
+      </div>
+    </nav>
+<div class="container emp-profile" *ngFor="let element of users">
+    <!-- *ngFor="let element of users" -->
+    <form method="post">
+        <div class="row" >
+            <!-- <div class="col-md-4">
+                <div class="profile-img">
+                    <img  id="#imageInput"  src='../../../assets/{{element.profilePicture}}' alt=""/>
+                </div>
+            </div> -->
+            <div class="col-md-6">
+                <div class="profile-head">
+                            <!-- <h5>
+                                 {{element.user_details.name}}
+                            </h5> -->
+                            <h6>
+                                User
+                            </h6>
+                    <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab"  role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+
+                    </ul> -->
+                </div>
+            </div>
+            <div class="col-md-6">                
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" (click)="delete(element.id);"  value="Delete"/>  
+            </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-md-4">
+  
+            </div> -->
+            <div class="col-md-6">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{element.user_details.name}}</p>
+                                    </div>
+                                </div> -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{element.email}}</p>
+                                    </div>
+                                </div>
+                                <!-- <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Affection</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{element.user_details.affection}}</p>
+                                    </div>
+                                </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>           
+  </div>
+<br/>
+</body>

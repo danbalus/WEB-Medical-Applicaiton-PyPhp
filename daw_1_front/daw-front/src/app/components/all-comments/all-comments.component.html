@@ -1,0 +1,223 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+  
+  <body class="body">
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">
+        <img src="../../../assets/nav_logo.png" width="45" height="45" class="d-inline-block align-top" alt="">
+        CleanMed
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a translate class="nav-link" href="user-profile">MyProfile<span class="sr-only">(current)</span></a>
+              </li>
+          <li class="nav-item active">
+            <a translate class="nav-link" href="medical-unit">MedicalUnits<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a translate class="nav-link" href="doctor">Doctors<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+              <a translate class="nav-link" href="all-comments">Reviews<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="#" (click)="logout()">Log Out</a>
+            </li>
+        </ul>
+      </div>
+      <div class="btn-group-sm" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" (click)="switchLanguage('ro')">RO</button>
+        <button type="button" class="btn btn-secondary" (click)="switchLanguage('en')">EN</button>
+      </div>
+    </nav>
+    <div class="container">
+        <!-- <h2 class="text-center">Bootstrap 4 User Rating Form / Comment Form</h2> -->
+        <!-- *ngFor="let element of medicalUnits" -->
+        <div class="card">
+            <div class="card-body" *ngFor="let element of extraInfoDC" >
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                        <p class="text-secondary text-center">15 Minutes Ago</p>
+                    </div>
+                    <div class="col-md-10">
+                        <p>
+                            <a class="float-left"  ><strong>User anonymously</strong></a>
+                            <span class="float-right" *ngFor="let item of [].constructor(element.rating)">
+                              <i class="text-warning fa fa-star"></i>
+                            </span>
+                       </p>
+                       <div class="clearfix"></div>
+                        <p>{{element.content}} </p>
+                        <p>DOCTOR: {{element.doctorName}}</p>
+                        <p>
+                            <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
+                            <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                       </p>
+
+                    </div>
+                </div>
+                  <!-- <div class="card card-inner">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                                    <p class="text-secondary text-center">15 Minutes Ago</p>
+                                </div>
+                                <div class="col-md-10">
+                                    <p><a href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman Akash</strong></a></p>
+                                    <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    <p>
+                                        <a class="float-right btn btn-outline-primary ml-2">  <i class="fa fa-reply"></i> Reply</a>
+                                        <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                                   </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+            </div>
+        </div>
+      </div>
+    <footer class="page-footer font-small mdb-color pt-4 bg-dark">
+  
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left text-white">
+  
+        <!-- Footer links -->
+        <div class="row text-center text-md-left mt-3 pb-3">
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
+            <h6 class="text-uppercase mb-4 font-weight-bold">CleanMed</h6>
+            <p translate>CleanMedInfo</p>
+          </div>
+          <!-- Grid column -->
+  
+          <hr class="w-100 clearfix d-md-none">
+  
+          <!-- Grid column -->
+          <!-- <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a href="#!">MDBootstrap</a>
+            </p>
+            <p>
+              <a href="#!">MDWordPress</a>
+            </p>
+            <p>
+              <a href="#!">BrandFlow</a>
+            </p>
+            <p>
+              <a href="#!">Bootstrap Angular</a>
+            </p>
+          </div> -->
+          <!-- Grid column -->
+  
+          <hr class="w-100 clearfix d-md-none">
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 translate class="text-uppercase mb-4 font-weight-bold">UsefulLinks</h6>
+            <p>
+              <a translate href="/">MainPage</a>
+            </p>
+            <p>
+              <a translate href="medical-unit">MedicalUnits</a>
+            </p>
+            <p>
+              <a translate href="doctor">Doctors</a>
+            </p>
+            <p>
+              <a translate href="#!">Help</a>
+            </p>
+          </div>
+  
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none">
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p>
+              <i class="fas fa-home mr-3"></i> Cluj-Napoca, CJ 10012, RO</p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> CleanMed@gmail.com</p>
+            <p>
+              <i class="fas fa-phone mr-3"></i> + 40 733 224 432</p>
+            <p>
+              <i class="fas fa-print mr-3"></i> + 40 234 234 555</p>
+          </div>
+          <!-- Grid column -->
+  
+        </div>
+        <!-- Footer links -->
+  
+        <hr>
+  
+        <!-- Grid row -->
+        <div class="row d-flex align-items-center">
+  
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8">
+  
+            <!--Copyright-->
+            <p class="text-center text-md-left">© 2019 Copyright:
+              <a href="https://google.com">
+                <strong> CleanMed.com</strong>
+              </a>
+            </p>
+  
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0">
+  
+            <!-- Social buttons -->
+            <div class="text-center text-md-right">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-google-plus-g"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+  
+          </div>
+          <!-- Grid column -->
+  
+        </div>
+        <!-- Grid row -->
+  
+      </div>
+      <!-- Footer Links -->
+    </footer>
+  </body>

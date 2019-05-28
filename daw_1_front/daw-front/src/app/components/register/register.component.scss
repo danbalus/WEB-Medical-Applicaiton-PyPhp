@@ -1,0 +1,48 @@
+.body{
+    padding: 150px 0px;
+    background-image: url("../../../assets/login-img.jpg");
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    margin:0px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:auto;
+    width :250px;
+    height:175px;
+}
+.mat-card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: inherit;
+}
+
+.button{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color:red;
+}
+
+.button2{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color:blue;
+    background-color: #d9d9d9;
+}
+
+.login-card{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    display: flex;
+
+}

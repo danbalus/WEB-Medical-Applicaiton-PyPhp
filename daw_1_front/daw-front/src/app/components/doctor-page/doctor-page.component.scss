@@ -1,0 +1,57 @@
+.body{
+    //padding: 150px 0px;
+    background: url("../../../assets/backgr2.png") ;
+     height: 100%;
+//     position: relative;
+//    // opacity: 0.65;
+//     background-position: center;
+     background-repeat: repeat-x;
+    // background-size: cover;
+
+}
+#btn-remove{
+    // margin-left: 10%;
+     color:red;
+     cursor: pointer;
+ }
+ .card{
+     width: 300px;
+     margin-top: 10px;
+     //margin-bottom: 10px;
+     //height: 250px;
+     margin-left: 10px;
+     float:left;
+     //margin-right: 70%;
+     flex-direction:row;
+     border: 1px solid black;
+     //padding: 10px;
+     border-radius: 25px;
+     
+ }
+ .photoDoc{
+    display:flex;
+    align-items: center;
+    
+
+ }
+//  .all-doctors{
+//   align-items: center;
+ 
+//  }
+//  .card-group{
+//      display: flex;
+//      //width: 30%;
+//      align-items: center;
+    
+
+//      //flex-direction: column;
+//      //align-items: center;
+//  }
+ #c1{
+    margin: 12px;
+ }
+ #ngc1{
+    display: flex;
+    flex-wrap: wrap;
+    //flex-grow: 10000000;/*Or any number big enough*/
+ }

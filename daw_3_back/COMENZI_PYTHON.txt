@@ -1,0 +1,7 @@
+ python manage.py test pages mysite
+python manage.py runserver 7000
+./Scripts/activate
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+ python manage.py makemigrations
+ python manage.py migrate
+pip3 install djangorestframework

@@ -1,0 +1,38 @@
+<body class="body">
+    <div class="login-card" >
+      <mat-card>
+          <mat-card-header>
+            <mat-card-title>Register</mat-card-title>
+          </mat-card-header>
+        <mat-card-content>
+      <form [formGroup]="registerForm"  class="login-form">
+          <!-- <mat-form-field class="field">
+              <mat-label class="label">Your Name</mat-label>
+              <input matInput placeholder="Enter your name" formControlName="name">
+            </mat-form-field> -->
+            <!-- <mat-form-field class="field">
+              <mat-label class="label">Your age</mat-label>
+              <input matInput placeholder="Enter your age" formControlName="age">
+            </mat-form-field> -->
+        <mat-form-field class="field">
+          <mat-label class="label">Your E-mail</mat-label>
+          <input matInput placeholder="Enter your email" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label class="label">Password</mat-label>
+          <input matInput placeholder="Enter your password" type='password' formControlName="password">
+        </mat-form-field>
+        <span >
+          {{errorMessage}}
+        </span>
+      </form>
+    </mat-card-content>
+      <div class="button2">
+          <button mat-button (click)="register()">Register</button>
+      </div>
+      <div class="button">
+          <button mat-button (click)="backToLogin()">Back to login</button>
+      </div>
+    </mat-card> 
+    </div>
+    </body>
